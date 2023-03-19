@@ -1,0 +1,35 @@
+.attels{
+    position: absolute;
+    width: 858px;
+    height: 1704px;
+    left: -10px;
+    top: -53px;    
+}
+
+h1{
+    position: absolute;
+    width: 881px;
+    height: 96px;
+    left: 1px;
+    top: calc(50% - 96px/2 - 742px);
+
+    font-family: 'Nova Cut';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 130%;
+    }
+
+h2{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+
+    position: absolute;
+    width: 1090px;
+    height: 106px;
+    left: 365px;
+    top: 1366px;
+}

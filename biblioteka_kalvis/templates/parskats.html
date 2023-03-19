@@ -1,0 +1,22 @@
+{% extends 'sagatave.html' %}
+
+{% block title %} Apstiprinājums {% endblock %}
+
+{% block content %}
+<h1>Apstiprinājums</h1>
+<table class="table table-striped">
+    {% for atslega, vertiba in rezultati.items() %}
+    <tr>
+        <td>{{atslega}}</td>
+        <td>{{vertiba}}</td>
+    </tr>
+
+    {% endfor %}
+</table>
+
+<a href="{{ url_for('darbinieku_izvelne')}}" class="btn btn-primary">
+    Atgriezties uz lasītāju apkalpošanu
+</a>
+
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'sagatave.html' %}
+
+{% block content %}
+<table id="rezultati" class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Autors</th>
+        <th>Nosaukums</th>
+        <th>Gads</th>
+        <th>Izdevējs</th>
+        <th>Numurs</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for id, autors, nosaukums, gads, izdevejs, numurs in rezultati %}
+        <tr>
+          <td>{{ id }}</td>
+          <td>{{ autors }}</td>
+          <td>{{ nosaukums }}</td>
+          <td>{{ gads }}</td>
+          <td>{{ izdevejs }}</td>
+          <td>{{ numurs }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+<a class="btn btn-primary" href="{{ url_for('meklet')}}" role="button">Meklēt vēlreiz</a>
+<a class="btn btn-outline-primary" href="/" role="button">Atgriezties uz sākumu</a>
+
+{% endblock %}

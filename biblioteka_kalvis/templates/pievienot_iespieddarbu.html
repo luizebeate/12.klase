@@ -1,0 +1,60 @@
+{% extends 'sagatave.html' %}
+
+{% block title %} Iespieddarbu pievienošana {% endblock %}
+
+{% block content %}
+<form method="post">
+    <div class="form-group">
+        <select class="form-select" aria-label="Default select example" name="veids">
+            <option selected>Izvēlies iespieddarba veidu</option>
+            <option value="grāmata">Grāmatas</option>
+            <option value="periodika">Periodika</option>
+        </select>
+
+        <label for="autors_vards">Autora vārds</label>
+        <input type="text" name="autors_vards"
+               class="form-control"
+               value="{{ request.form['autors_vards'] }}"></input>
+
+        <label for="autors_uzvards">Autora uzvārds</label>
+        <input type="text" name="autors_uzvards"
+               class="form-control"
+               value="{{ request.form['autors_uzvards'] }}"></input>
+
+        <label for="nosaukums">Nosaukums</label>
+        <input type="text" name="nosaukums"
+               class="form-control"
+               value="{{ request.form['nosaukums'] }}"></input>
+
+        <label for="gads">Gads</label>
+        <input type="text" name="gads"
+               class="form-control"
+               value="{{ request.form['gads'] }}"></input>
+
+        <label for="izdevejs">Izdevējs</label>
+        <input type="text" name="izdevejs"
+               class="form-control"
+               value="{{ request.form['izdevejs'] }}"></input>
+
+        <label for="numurs">Numurs</label>
+        <input type="text" name="numurs"
+               class="form-control"
+               value="{{ request.form['numurs'] }}"></input>
+
+        <label for="pieejamais_skaits">Pieejamais skaits</label>
+        <input type="text" name="pieejamais_skaits"
+               class="form-control"
+               value="{{ request.form['pieejamais_skaits'] }}"></input>
+
+        <label for="plaukta_numurs">Plaukta numurs</label>
+        <input type="text" name="plaukta_numurs"
+               class="form-control"
+               value="{{ request.form['plaukta_numurs'] }}"></input>
+
+        <br>
+        <button type="submit" class="btn btn-primary">Pievienot</button>
+    </div>
+</form>
+
+
+{% endblock %}

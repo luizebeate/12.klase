@@ -1,0 +1,46 @@
+{% extends 'sagatave.html' %}
+
+{% block title %} Lietotāju pievienošana {% endblock %}
+
+{% block content %}
+<form method="post">
+    <div class="form-group">
+        <select class="form-select" name="kategorija">
+            <option selected>Lietotāja kategorija</option>
+            <option value="lasītājs">Lasītājs</option>
+            <option value="darbinieks">Darbinieks</option>
+        </select>
+
+        <label for="vards">Vārds</label>
+        <input type="text" name="vards"
+               class="form-control"
+               value="{{ request.form['vards'] }}"></input>
+
+        <label for="uzvards">Uzvārds</label>
+        <input type="text" name="uzvards"
+               class="form-control"
+               value="{{ request.form['uzvards'] }}"></input>
+
+        <label for="personas_kods">Personas kods</label>
+        <input type="text" name="personas_kods"
+               class="form-control"
+               value="{{ request.form['personas_kods'] }}"></input>
+
+        <label for="talrunis">Tālrunis</label>
+        <input type="text" name="talrunis"
+               class="form-control"
+               value="{{ request.form['talrunis'] }}"></input>
+
+        <label for="parole">Parole</label>
+        <input type="password" name="parole"
+               class="form-control"
+               value="{{ request.form['parole'] }}"></input>
+
+        <br>
+        <button type="submit" class="btn btn-primary">Saglabāt</button>
+    </div>
+</form>
+
+
+
+{% endblock %}

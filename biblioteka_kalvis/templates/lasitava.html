@@ -1,0 +1,37 @@
+{% extends 'sagatave.html' %}
+
+{% block title %} Lasītavas darbs {% endblock %}
+
+{% block content %}
+<form method="post">
+    <div class="form-group">
+        <label for="vards">Vārds</label>
+        <input type="text" name="vards" id="vards"
+               class="form-control"
+               value="{{ request.form['vards'] }}"></input>
+
+        <label for="uzvards">Uzvārds</label>
+        <input type="text" name="uzvards" id="uzvards"
+               class="form-control"
+               value="{{ request.form['uzvards'] }}"></input>
+
+        <label for="personas_kods">Personas kods</label>
+        <input type="text" name="personas_kods" id="personas_kods"
+               class="form-control"
+               value="{{ request.form['personas_kods'] }}"></input>
+
+         <label for="izdevuma_id">Izdevuma ID</label>
+        <input type="text" name="izdevuma_id" id="izdevuma_id"
+               class="form-control"
+               value="{{ request.form['izdevuma_id'] }}"></input>
+
+        <label for="termins">Nodošanas termiņš</label>
+        <input type="date" name="termins" id="termins"
+               class="form-control"
+               value="{{ request.form['termins'] }}"></input>
+
+        <button type="submit" class="btn btn-primary">Izsniegt</button>
+    </div>
+</form>
+
+{% endblock %}

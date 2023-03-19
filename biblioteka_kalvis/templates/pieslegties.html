@@ -1,0 +1,27 @@
+{% extends 'sagatave.html' %}
+
+{% block content %}
+
+<div class="col-lg-4 mx-auto">
+    <main class="form-signin w-100 m-auto">
+        <form method="post">
+            <img class="mb-4" src="{{url_for('static', filename='pieslegties.png')}}" alt="" width="72" height="78">
+            <h1 class="h3 mb-3 fw-normal">Pieslēgšanās tikai darbiniekiem</h1>
+
+            <div class="form-floating">
+                <input type="text" class="form-control" name="pers_kods" placeholder="111111-11111" value="{{ request.form['pers_kods'] }}">
+                <label for="pers_kods" >Personas kods</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" name="parole" placeholder="Parole" value="{{ request.form['parole'] }}">
+                <label for="parole">Parole</label>
+            </div>
+            <div class="form-floating">
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Pieslēgties</button>
+            </div>
+        </form>
+
+    </main>
+</div>
+
+{% endblock %}

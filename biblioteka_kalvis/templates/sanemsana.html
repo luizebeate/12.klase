@@ -1,0 +1,19 @@
+{% extends 'sagatave.html' %}
+
+{% block title %} Iespieddarbu saņemšana atpakaļ {% endblock %}
+
+{% block content %}
+<form method="post">
+    <div class="form-group">
+        <label for="izsnieguma_id">Izsnieguma ID</label>
+        <input type="text" name="izsnieguma_id" id="izsnieguma_id"
+               class="form-control"
+               value="{{ request.form['izsnieguma_id'] }}"></input>
+        <br>
+        <button type="submit" class="btn btn-primary">Saņemt</button>
+    </div>
+</form>
+
+
+
+{% endblock %}

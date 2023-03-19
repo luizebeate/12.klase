@@ -1,7 +1,82 @@
-{% extends "base.html" %}
- 
-{% block content %}
-    <h1> {% block title %} Sveika, pasaule!{% endblock %}</h1>
-    <p>Šis teksts ir izvadīts no Flask servera kā veidne</p>
-{% endblock %}
+{% extends 'base.html' %}
 
+{% block content %}
+<form method="post">
+    <div class="form-group">
+        <select class="form-select" aria-label="Default select example" name = "mebele">
+            <option selected>Mēbele</option>
+            <option value="krēsls">Krēsls</option>
+            <option value="kumode">Kumode </option>
+            <option value="skapis">Skapis</option>
+            <option value="galds">Galds</option>
+            <option value="gulta">Gulta</option>  
+        </select>
+
+        <select class="form-select" aria-label="Default select example" name = "materials">
+            <option selected>Materiāls</option>
+            <option value="metals">Metāls</option>
+            <option value="koks">Koks </option>
+            <option value="plastmasa">Plastmasa</option>
+        </select>
+
+        <select class="form-select" aria-label="Default select example" name = "tehnika">
+            <option selected>Atjaunošanas tehnika</option>
+            <option value="polsteresana">Polsterēšana</option>
+            <option value="krasosana">Krāsošana </option>
+            <option value="lakosana">Lakošana</option>
+            <option value="dekupesana">Dekupēšana</option>
+            <option value="slipesana">Slīpēšana</option>
+        </select>
+
+        <select class="form-select" aria-label="Default select example" name = "stils">
+            <option selected>Stils</option>
+            <option value="modernais">Modernais</option>
+            <option value="Retro">Retro </option>
+            <option value="Apstrakts">Apstrakts</option>
+            <option value="Klasiskais">Klasiskais</option>
+            <option value="industrialais">Industriālais</option>
+            <option value="provansas">Provansas</option>
+        </select>
+
+        <!--<form action="{{ url_for('ideja')}}">-->
+            <button type="submit" class="btn btn-primary">Meklēt</button>
+         <!--</form>-->
+
+        <!--<form action="{{ url_for('pieslegties')}}">-->
+            <button type="submit" class="btn btn-outline-secondary btn-lg px-4">Pieslēgties</button>
+        <!--</form>-->
+
+        <style>
+            .search-container {
+              display: flex;
+              justify-content: flex-end;
+              align-items: center;
+              height: 50px;
+            }
+        
+            form {
+              display: flex;
+              align-items: center;
+            }
+        
+            input[type="text"] {
+              padding: 10px;
+              border: none;
+              border-radius: 5px;
+              margin-right: 10px;
+            }
+        
+            button[type="submit"] {
+              background-color: #000000;
+              color: white;
+              border: none;
+            }
+
+
+        </style>   
+
+    </div>
+</form>
+
+
+{% endblock %}

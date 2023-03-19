@@ -1,0 +1,30 @@
+{% extends 'sagatave.html' %}
+
+{% block title %} Bibliotēka {% endblock %}
+{% block content %}
+
+<div class="px-4 pt-5 my-5 text-center border-bottom">
+    <h1 class="display-4 fw-bold">Esiet sveicināti bibliotēkā!</h1>
+    <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">Šis ir izpildīta projekta darba dizaina risinājums – tīmekļa lietotne paraugs. Neredzamo daļu nodrošina Python ar Flask, redzamo HTML ar Bootstrap noformējumu. Tīmeklī publicēts iekš pyanywhere.com</p>
+        <p class="lead mb-4">Šī lietotne paredzēta bibliotēkas lasītāju apkalpošanai.</p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+            <form action="{{ url_for('meklet')}}">
+            <button type="submit" class="btn btn-primary btn-lg px-4 me-sm-3">Meklēt</button>
+            </form>
+
+            <form action="{{ url_for('pieslegties')}}">
+                <button type="submit" class="btn btn-outline-secondary btn-lg px-4">Pieslēgties</button>
+            </form>
+        </div>
+    </div>
+    <div class="overflow-hidden" style="max-height: 30vh;">
+        <div class="container px-5">
+            <img src="{{url_for('static', filename='plaukts.png')}}" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image"
+                 width="700" height="500" loading="lazy">
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
