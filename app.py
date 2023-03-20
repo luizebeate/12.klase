@@ -4,6 +4,7 @@ import izvelne
 import atjaunosanas_kods
 import darbinieka_piekluve
 
+
 def izveidot_savienojumu():
     conn = sqlite3.connect("atjaunosanas_idejas.db")
     conn.row_factory = sqlite3.Row
@@ -21,36 +22,45 @@ def sanemt_aprakstu(id):
     return ideja
 
 app = Flask(__name__)
+app.config["SECRET_KEY"] = "Mēbeles"
 
 @app.route("/")
 def index():
     mebeles = izvelne.mebelu_saraksts()
     print(mebeles)
-    
     return render_template("index.html", mebeles = mebeles) #mebelesINDEXlapaa un mebelesnoDB
 
+#@app.route("/<int:ideja_id>")
+@app.route("/ideja", methods=('GET', 'POST'))
+def ideja():
     
-@app.route("/<int:ideja_id>")
-def ideja(ideja_id):
+    if request.method == 'POST':
+            mebele = request.form.get("mebele")
+            materials = request.form.get("materials")
+            tehnika = request.form.get("tehnika")
+            stils = request.form.get("stils")
+            #print(mebele, materials, tehnika, stils)
 
-    ideja = atjaunosanas_kods.test_izveleta_konkreta_ideja_apraksts(ideja_id)
-    return render_template("ideja.html", ideja = ideja)
+    idejasid = atjaunosanas_kods.izveleta_konkreta_ideja(mebele, materials, tehnika, stils) #?
+    ideja = atjaunosanas_kods.test_izveleta_konkreta_ideja_apraksts(2)
+    return render_template("ideja.html", ideja = ideja, idejasid = idejasid)
 
-
-@app.route("/pieslegties", methods=('GET', 'POST'))
+@app.route("/pieslegties")
 def pieslegties():
     if request.method == 'POST':
         pers_kods = request.form.get("pers_kods")
         parole = request.form.get("parole")
 
         print(pers_kods, parole)
-        if darbinieka_piekluve.parbaude(pers_kods, parole):
-            return render_template("darbinieka_landing_page.html")
-        else:
-            flash("Pieteikšanās neveiksmīga")
 
+    if darbinieka_piekluve.parbaude(pers_kods, parole):
+         return render_template("darbinieka_lapa.html")
+    else:
+        flash("Pieteikšanās neveiksmīga")   
     return render_template("pieslegties.html")
+
 
 
 if __name__ == "__main__":
     app.run(debug = True)
+

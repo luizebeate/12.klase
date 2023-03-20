@@ -11,6 +11,7 @@ izveleta_mebele = "Galds"
 izvelets_materials = "Koks"
 izveleta_tehnika = "Dekupēšana"
 izvelets_stils = "Klasiskais"
+
 def izveleta_konkreta_mebele(izveleta_mebele):
     conn = db.izveidot_savienojumu()
 
@@ -58,7 +59,7 @@ def izvelets_konkrets_stils(izvelets_stils):
 
 #print(izvelets_konkrets_stils())
 
-def izveleta_konkreta_ideja():
+def izveleta_konkreta_ideja(izveleta_mebele, izvelets_materials, izveleta_tehnika, izvelets_stils):
     conn = db.izveidot_savienojumu()
 
     izveletas_mebeles_id = izveleta_konkreta_mebele(izveleta_mebele)
@@ -107,21 +108,3 @@ def test_izveleta_konkreta_ideja_apraksts(id):
     return apraksti
 
 print(izveleta_konkreta_ideja_apraksts())
-"""
-savienojums ar DB
-ir saņemts mēbeles nosaukums
-vaicajums = SELECT ID FROM mebeles WHERE nosaukums = "izveleta_mebele"
-execute(vaicajums)
-rezult = fetchone()
-izveletas-mebeles-id= rezult["ID"]
-"""
-
-# tāds ari tehnikai, veidam utt.
-
-# beigās mega SELECT
-# SELECT apraksta_ID from IDEJAS where mebeles_id = izveletas-mebeles-id AND tehnikas_id = izveletas utt.
-# execute + fetchall()
-# rezultāts ir masivs ar aprakstu ID
-
-# for katrs ID in masivs // vai labāk SELECT ar JOIN
-# SELECT apraksta_teksts FROM aprakste WHERE apraksta_id = ID no masiva

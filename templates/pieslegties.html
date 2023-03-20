@@ -1,4 +1,4 @@
-{% extends 'sagatave.html' %}
+{% extends 'base.html' %}
 
 {% block content %}
 
@@ -9,11 +9,11 @@
             <h1 class="h3 mb-3 fw-normal">Pieslēgšanās tikai darbiniekiem</h1>
 
             <div class="form-floating">
-                <input type="text" class="form-control" name="pers_kods" placeholder="100604-20728" value="{{ request.form['pers_kods'] }}">
+                <input type="text" class="form-control" name="pers_kods" placeholder="000000-000000" value="{{ request.form['pers_kods'] }}">
                 <label for="pers_kods" >Personas kods</label>
             </div>
             <div class="form-floating">
-                <input type="password" class="form-control" name="parole" placeholder="41c095b2da6123f8e54fff35a4a45fe3" value="{{ request.form['parole'] }}">
+                <input type="password" class="form-control" name="parole" placeholder="Parole" value="{{ request.form['parole'] }}">
                 <label for="parole">Parole</label>
             </div>
             <div class="form-floating">

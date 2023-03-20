@@ -38,13 +38,10 @@
             <option value="provansas">Provansas</option>
         </select>
 
-        <!--<form action="{{ url_for('ideja')}}">-->
-            <button type="submit" class="btn btn-primary">Meklēt</button>
-         <!--</form>-->
+            <a class="btn btn-primary" href="{{ url_for('ideja')}}" role="button">Meklēt</a>
+            
 
-        <!--<form action="{{ url_for('pieslegties')}}">-->
-            <button type="submit" class="btn btn-outline-secondary btn-lg px-4">Pieslēgties</button>
-        <!--</form>-->
+            <a class="btn btn-primary" href="{{ url_for('pieslegties')}}" role="button">Pieslēgties</a>
 
         <style>
             .search-container {
