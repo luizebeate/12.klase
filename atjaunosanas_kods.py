@@ -78,7 +78,10 @@ def izveleta_konkreta_ideja(izveleta_mebele, izvelets_materials, izveleta_tehnik
         izveleto_ideju_id.append(katrs["apraksts_ID"])
 
     db.slegt_savienojumu(conn)
-    return izveleto_ideju_id
+    if izveleto_ideju_id[0] == None:
+        izveleto_ideju_id[0] = 0
+
+    return izveleto_ideju_id[0]
 
 #print(izveleta_konkreta_mebele(izveleta_mebele))
 
@@ -106,5 +109,3 @@ def test_izveleta_konkreta_ideja_apraksts(id):
 
     db.slegt_savienojumu(conn)
     return apraksti
-
-print(izveleta_konkreta_ideja_apraksts())

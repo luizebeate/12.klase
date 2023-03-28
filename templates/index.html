@@ -1,44 +1,45 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<form method="post">
+<form method="post" action="{{ url_for('ideja')}}">
     <div class="form-group">
         <select class="form-select" aria-label="Default select example" name = "mebele">
             <option selected>Mēbele</option>
-            <option value="krēsls">Krēsls</option>
-            <option value="kumode">Kumode </option>
-            <option value="skapis">Skapis</option>
-            <option value="galds">Galds</option>
-            <option value="gulta">Gulta</option>  
+            <option value="Krēsls">Krēsls</option>
+            <option value="Kumode">Kumode </option>
+            <option value="Skapis">Skapis</option>
+            <option value="Galds">Galds</option>
+            <option value="Gulta">Gulta</option>  
         </select>
 
         <select class="form-select" aria-label="Default select example" name = "materials">
             <option selected>Materiāls</option>
-            <option value="metals">Metāls</option>
-            <option value="koks">Koks </option>
-            <option value="plastmasa">Plastmasa</option>
+            <option value="Metāls">Metāls</option>
+            <option value="Koks">Koks </option>
+            <option value="Plastmasa">Plastmasa</option>
         </select>
 
         <select class="form-select" aria-label="Default select example" name = "tehnika">
             <option selected>Atjaunošanas tehnika</option>
-            <option value="polsteresana">Polsterēšana</option>
-            <option value="krasosana">Krāsošana </option>
-            <option value="lakosana">Lakošana</option>
-            <option value="dekupesana">Dekupēšana</option>
-            <option value="slipesana">Slīpēšana</option>
+            <option value="Polsterēšana">Polsterēšana</option>
+            <option value="Krāsošana">Krāsošana </option>
+            <option value="Lakošana">Lakošana</option>
+            <option value="Dekupēšana">Dekupēšana</option>
+            <option value="Slīpēšana">Slīpēšana</option>
         </select>
 
         <select class="form-select" aria-label="Default select example" name = "stils">
             <option selected>Stils</option>
-            <option value="modernais">Modernais</option>
+            <option value="Modernais">Modernais</option>
             <option value="Retro">Retro </option>
-            <option value="Apstrakts">Apstrakts</option>
+            <option value="Abstrakts">Abstrakts</option>
             <option value="Klasiskais">Klasiskais</option>
-            <option value="industrialais">Industriālais</option>
-            <option value="provansas">Provansas</option>
+            <option value="Industriālais">Industriālais</option>
+            <option value="Provansas">Provansas</option>
         </select>
 
-            <a class="btn btn-primary" href="{{ url_for('ideja')}}" role="button">Meklēt</a>
+            <!-- <a class="btn btn-primary" href="{{ url_for('ideja')}}" role="button">Meklēt</a> -->
+            <button class="btn btn-primary" type="submit" role="button">Meklēt</button>
             
 
             <a class="btn btn-primary" href="{{ url_for('pieslegties')}}" role="button">Pieslēgties</a>

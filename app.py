@@ -27,7 +27,6 @@ app.config["SECRET_KEY"] = "Mēbeles"
 @app.route("/")
 def index():
     mebeles = izvelne.mebelu_saraksts()
-    print(mebeles)
     return render_template("index.html", mebeles = mebeles) #mebelesINDEXlapaa un mebelesnoDB
 
 #@app.route("/<int:ideja_id>")
@@ -35,15 +34,18 @@ def index():
 def ideja():
     
     if request.method == 'POST':
-            mebele = request.form.get("mebele")
-            materials = request.form.get("materials")
-            tehnika = request.form.get("tehnika")
-            stils = request.form.get("stils")
-            #print(mebele, materials, tehnika, stils)
+        mebele = request.form.get("mebele")
+        materials = request.form.get("materials")
+        tehnika = request.form.get("tehnika")
+        stils = request.form.get("stils")
+        print(mebele, materials, tehnika, stils)
 
-    idejasid = atjaunosanas_kods.izveleta_konkreta_ideja(mebele, materials, tehnika, stils) #?
-    ideja = atjaunosanas_kods.test_izveleta_konkreta_ideja_apraksts(2)
-    return render_template("ideja.html", ideja = ideja, idejasid = idejasid)
+        idejasid = atjaunosanas_kods.izveleta_konkreta_ideja(mebele, materials, tehnika, stils) #?
+        
+        ideja = atjaunosanas_kods.test_izveleta_konkreta_ideja_apraksts(idejasid)
+        return render_template("ideja.html", ideja = ideja, idejasid = idejasid)
+    
+    return render_template("ideja.html")
 
 @app.route("/pieslegties")
 def pieslegties():
@@ -63,4 +65,3 @@ def pieslegties():
 
 if __name__ == "__main__":
     app.run(debug = True)
-
